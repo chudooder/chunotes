@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
+const CopyPlugin = require("copy-webpack-plugin");
 const path = require('path')
 
 const reactConfig = {
@@ -13,6 +14,10 @@ const reactConfig = {
         use: {
           loader: "ts-loader"
         }
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       }
     ]
   },
@@ -28,7 +33,12 @@ const reactConfig = {
       template: __dirname + '/src/index.html',
       filename: 'index.html',
       inject: 'body'
-    })
+    }),
+    // new CopyPlugin({
+    //   patterns: [
+    //     { from: "static" }
+    //   ]
+    // })
   ]
 };
 
