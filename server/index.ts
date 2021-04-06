@@ -1,6 +1,7 @@
 import * as express from 'express'
 import * as path from 'path'
 import { listDirectory, readFile } from './files'
+import { search } from './search'
 
 
 const app = express()
@@ -31,6 +32,15 @@ app.get('/api/files/*', async (req, res) => {
     res.json(file)
   } catch (err) {
     res.status(404).send('No such file')
+  }
+})
+
+app.get('/api/search', async (req, res) => {
+  try {
+    const result = await search(directory, req.query.q.toString())
+    res.json(result)
+  } catch (err) {
+    res.status(500).send('Something happened')
   }
 })
 

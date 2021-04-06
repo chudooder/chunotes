@@ -61,7 +61,7 @@ export function SidebarFolder(props: any) {
   return (
     <>
       <div className={className} 
-        style={{paddingLeft: 10 + 20 * (props.depth - 1)}} 
+        style={{paddingLeft: 20 + 20 * (props.depth - 1)}} 
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         onClick={onFolderClick}>

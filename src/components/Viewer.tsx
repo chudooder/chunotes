@@ -8,6 +8,11 @@ import { useContext, useState, useEffect } from 'react'
 
 import { FileContext } from "../contexts/File"
 
+type CodeArgs = {
+  language?: string,
+  value?: React.ReactNode
+}
+
 export function Viewer(props: any) {
   const {state, dispatch} = useContext(FileContext)
   const [fileContents, setFileContents] = useState('')
@@ -25,10 +30,6 @@ export function Viewer(props: any) {
       })
   }, [state.selectedFile])
 
-  type CodeArgs = {
-    language?: string,
-    value?: React.ReactNode
-  }
   const customRenderers = {
     code: ({language, value}: CodeArgs) => {
       return (<Highlight showLineNumbers={true} style={androidstudio} language={language} children={value}/>)
@@ -50,7 +51,7 @@ export function Viewer(props: any) {
   }
 
   return (
-    <div className="pl-5 pt-2 markdown-body">
+    <div className="px-5 py-5 markdown-body">
       <ReactMarkdown renderers={customRenderers} plugins={[[gfm, {singleTilde: false}]]}>
         { fileContents }
       </ReactMarkdown>

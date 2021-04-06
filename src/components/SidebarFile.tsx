@@ -19,7 +19,7 @@ export function SidebarFile(props: SidebarFileProps) {
   }
 
   let style = {
-    paddingLeft: 10 + 20 * (props.depth - 1)
+    paddingLeft: 20 + 20 * (props.depth - 1)
   }
 
   let className = null
