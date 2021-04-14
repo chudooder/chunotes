@@ -56,7 +56,7 @@ export function SidebarFolder(props: any) {
   const caretIcon = open ? <CaretDownFill className="inline-block"/>    
                          : <CaretRightFill className="inline-block"/>
 
-  const className = hover ? 'bg-gray-600' : null
+  const className = hover ? 'bg-gray-600 text-blue-100' : 'text-blue-100'
 
   return (
     <>

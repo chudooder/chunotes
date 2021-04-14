@@ -2,6 +2,7 @@ import * as React from 'react'
 import { useState, useContext } from 'react'
 
 import { FileContext } from "../contexts/File"
+import { FileEarmarkTextFill } from "react-bootstrap-icons"
 
 type SidebarFileProps = {
   depth: number
@@ -35,7 +36,7 @@ export function SidebarFile(props: SidebarFileProps) {
       onMouseLeave={() => setHover(false)}
       onClick={onClick}>
 
-      { props.name }
+      <FileEarmarkTextFill className="inline-block"/> { props.name }
     </div>
   )
 }

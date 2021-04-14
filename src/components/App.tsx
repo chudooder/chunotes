@@ -1,11 +1,15 @@
 import * as React from "react"
 import { useState, useEffect } from "react"
 import axios from 'axios'
+import Split from "react-split"
 
 import { FileProvider } from "../contexts/File"
 import { Header } from "./Header"
 import { Sidebar } from "./Sidebar"
 import { Viewer } from "./Viewer"
+
+import "../styles/gutter.css"
+import "../styles/fullscreen.css"
 
 export function App(props: any) {
   const [files, setFiles] = useState({path: '', files: [], dirs: []})
@@ -25,10 +29,10 @@ export function App(props: any) {
           <Header/>
         </div>
         <div className="flex-1">
-          <div className="flex flex-row items-stretch h-full">
+          <Split className="split app-container" sizes={[25, 75]}>
             <Sidebar files={files}/>
-            <Viewer className="pl-10 flex-1"/>
-          </div>
+            <Viewer/>
+          </Split>
         </div>
       </div>
     </FileProvider>

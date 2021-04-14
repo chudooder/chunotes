@@ -1,0 +1,12 @@
+html, body {
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.h-header {
+  min-height: 60px;
+}
+
+.app-container {
+  height: calc(100vh - 60px);
+}

@@ -51,7 +51,7 @@ export function Viewer(props: any) {
   }
 
   return (
-    <div className="px-5 py-5 markdown-body">
+    <div className="px-5 py-5 box-border markdown-body display-block w-full max-h-full h-full overflow-y-auto">
       <ReactMarkdown renderers={customRenderers} plugins={[[gfm, {singleTilde: false}]]}>
         { fileContents }
       </ReactMarkdown>

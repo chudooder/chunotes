@@ -46,10 +46,10 @@ export function SearchBar() {
   )
 
   return (
-    <div className="relative flex flex-row items-center">
+    <div className="relative flex flex-row items-center float-right">
       <Search className="inline-block mr-2" size={24}/>
       <form onSubmit={handleSubmit}>
-        <input className="focus:ring-indigo-500 focus:border-indigo-500 text-black rounded-md py-1 px-2 border border-gray-300" 
+        <input className="text-black rounded-md py-1 px-2 border border-gray-300 " 
           type="text"
           value={query}
           onChange={handleChange}/>

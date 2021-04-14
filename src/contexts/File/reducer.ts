@@ -13,7 +13,6 @@ function selectFile(state: FileContextState, filePath: string) {
 }
 
 export const reducer = (state: FileContextState, action: FileContextAction) => {
-  console.log(state, action)
   switch (action.type) {
     case "select_file":
       return selectFile(state, action.filePath)
